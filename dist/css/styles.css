@@ -1,0 +1,172 @@
+@font-face {
+  font-family: digital-7;
+  src: url("/fonts/digital-7/digital-7.ttf") format("truetype");
+}@font-face {
+  font-family: digital-7 mono;
+  src: url("/fonts/digital-7/digital-7 (mono).ttf") format("truetype");
+}
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #c0c0c0;
+}
+h1 {
+  color: red;
+}
+#game, #face, #gamecontrol, .dot {
+  border: 3px outset;
+  border-color: #fff #d9d9d9 #d9d9d9 #fff;
+}
+#gamedisplay, #dotfield {
+  border: 3px inset;
+  border-color: #d9d9d9 #fff #fff #d9d9d9;
+  background-color: #c0c0c0;
+}
+#face:active, .dot:active {
+  border: 3px inset;
+  border-color: #d9d9d9 #fff #fff #d9d9d9;
+}
+#game {
+  padding: 20px;
+  overflow: auto; /* Reminder: do not touch height: https://stackoverflow.com/a/17807687 */
+  /* width set with JS depending on number of columns. */
+}
+#gamedisplay {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px;
+  /* Kludge: width set with JS depending on number of columns. Prefer to use width: 100%,
+     but it was too narrow by 5px. Fix with CSS in v2. */
+}
+#bombsleft, #timer {
+  display: inline-block;
+  padding: 2px;
+  height: 40px;
+  background-color: black;
+  font-family: "digital-7 mono";
+  font-size: 40px;
+  color: red;
+  line-height: 44px;
+}
+#face {
+  width: 40px;
+  height: 40px;
+  background-image: url("/images/happy.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#face.sunglasses {
+  background-image: url("/images/sunglasses.png");
+}
+#face.sad {
+  background-image: url("/images/sad.png");
+}
+#face.ooh {
+  background-image: url("/images/ooh.png");
+}
+#dotfield {
+  margin: 20px 0;
+  overflow: auto; /* Reminder: do not touch height: https://stackoverflow.com/a/17807687 */
+  /* width set with JS depending on number of columns. */
+}
+.dot {
+  box-sizing: border-box;
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-color: #bdbdbd;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0; /* Default: do not show num of neighbor bombs yet */
+  font-weight: bold;
+}
+.dot.reveal {
+  border: 1px solid #858585;
+  font-size: 25px;
+}
+.dot.flag {
+  background-image: url("/images/flag.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.dot.revealbomb {
+  background-image: url("/images/bomb.png");
+  background-size: contain;
+  background-color: transparent;
+  font-size: 0; /* Hide num of neighbor bombs, so bomb icon can be seen */
+}
+.dot.revealbomb.flag {
+  background-image: url("/images/bomb.png");
+  background-size: contain;
+  background-color: transparent;
+}
+.dot.revealbomb.click {
+  background-color: red;
+}
+.one {
+  color: blue;
+}
+.two {
+  color: green;
+}
+.three {
+  color: red;
+}
+.four {
+  color: purple;
+}
+.five {
+  color: maroon;
+}
+.six {
+  color: turquoise;
+}
+.seven {
+  color: black;
+}
+.eight {
+  color: gray;
+}
+#gamecontrol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+#gamecontrol h2 {
+  margin: 0 0 10px 0;
+  font-family: digital-7;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+#gamecontrol form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#gamecontrol label {
+  display: block;
+  margin-bottom: 10px;
+  width: 100px;
+  font-family: digital-7;
+  font-weight: bold;
+}
+#gamecontrol input[type=text] {
+  float: right;
+  display: inline-block;
+  width: 30px;
+}
+.accessaid {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

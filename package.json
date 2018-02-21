@@ -1,0 +1,25 @@
+{
+  "name": "minesweeper",
+  "version": "1.0.1",
+  "description": "Minesweeper take-home exercise for UI engineer role.",
+  "main": "src/main.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jasmine-node": "^1.14.5",
+    "nodemon": "^1.15.1"
+  },
+  "devDependencies": {
+    "file-loader": "^1.1.7",
+    "webpack": "^3.11.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "webpack && npm start",
+    "test": "./node_packages/.bin/jasmine-node spec"
+  },
+  "keywords": [
+    "minesweeper"
+  ],
+  "author": "Myron Yeung",
+  "license": "ISC"
+}

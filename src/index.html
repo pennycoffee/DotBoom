@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Dot Boom!</title>
+  <link rel="stylesheet" href="/css/styles.css"></link>
+  <link rel="icon" href="/images/flag.png">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+
+<body>
+
+  <h1 class="accessaid">Dot Boom!</h1>
+
+  <noscript><h2>Please enable Javascript to play!</h2></noscript>
+
+  <div id="game">
+    <section id="gamedisplay">
+      <div id="bombsleft">000</div>
+      <div id="face"></div>
+      <div id="timer">000</div>
+    </section>
+
+    <section id="dotfield">
+    </section>
+
+    <section id="gamecontrol">
+      <h2>Change difficulty</h2>
+      <form>
+        <label>
+          Rows:
+          <input type="text" id="rows"/>
+        </label>
+        <label>
+          Columns:
+          <input type="text" id="columns"/>
+        </label>
+        <label>
+          Bombs:
+          <input type="text" id="bombs"/>
+        </label>
+        <input type="submit" value="Change" id="changegame" />
+      </form>
+    </section>
+
+  </div>
+
+  <script defer src="/bundle.js"></script>
+</body>
+</html>
+
+
+
+
